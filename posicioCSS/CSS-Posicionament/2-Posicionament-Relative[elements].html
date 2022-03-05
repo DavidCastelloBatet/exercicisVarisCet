@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS Position: Elements dins d'elements Relative</title>
+<style type="text/css">
+
+	#relative {
+		position:relative;
+		left:100px;
+		top:100px;
+		width:500px;
+		height:500px;	
+		background-color:#00FF00;
+		overflow:scroll;
+	}
+	
+		#relative .absolute{	
+			position:absolute;
+			left:200px;
+			top:1000px;
+			z-index:1; /* Individualment no serveix per a res */
+			width:50px;
+			height:50px;	
+			background-color:#FF0000;
+			border: 3px dotted #000000;
+		}
+		
+		#relative .fixed{
+			position:Fixed;
+			right:50px;
+			bottom:100px; 
+			width:50px;
+			height:50px;
+			background-color:#00FFFF;
+			border: 3px dotted #000000;
+		}
+		
+		#relative .relative{
+			position:Relative;
+			left:100px;
+			top:100px; 
+			width:50px;
+			height:50px;		
+			background-color:#00FF00;
+			border: 3px dotted #000000;
+		}
+		
+		#relative .static{
+			position:static;
+			left:100px; /* No funciona */
+			top:100px;	/* No funciona */
+			z-index:1;  /* No serveix per a res */
+			width:50px;
+			height:50px;		
+			background-color:#00FFF0;
+			border: 3px dotted #000000;
+		}
+		
+		#relative .sticky{
+			position:Sticky;
+			left:100px;
+			top:10px;
+			bottom:150px;
+			width:50px;
+			height:50px;
+			background-color:#0000FF;
+			border: 3px dotted #000000;
+		}
+	
+	
+</style>
+</head>
+
+<body>
+
+	<h1>CSS Position: Elements dins l'element Relative</h1>
+
+  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut purus nisi,   dictum a consequat in, accumsan vitae tellus. Maecenas eleifend, ipsum   lacinia mollis molestie, lorem turpis volutpat mi, sed gravida magna   neque sit amet velit. Pellentesque placerat hendrerit magna, id sagittis   nulla consectetur sed. Curabitur interdum est erat, sit amet varius   sapien fermentum quis. Ut eros tellus, tristique eu suscipit vitae,   tempus vitae sem. Quisque mattis magna in vestibulum porta. Aenean   semper massa sit amet magna fermentum, eget egestas nunc molestie. Class   aptent taciti sociosqu ad litora torquent per conubia nostra, per   inceptos himenaeos. Aliquam vulputate mollis mollis. Vivamus fermentum   purus et nisi porta varius. Pellentesque molestie faucibus sem. Donec   aliquam ultricies mauris, interdum eleifend sapien porttitor a. Fusce ut   auctor ligula. Praesent nec augue mauris. Curabitur eu purus in ipsum   feugiat accumsan vitae sit amet dolor. </p>
+  <p> Vivamus viverra lorem eu lacinia sodales. Nam a ante vitae purus posuere   ullamcorper. In pharetra convallis viverra. Duis ac velit at nibh   aliquam mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.   Fusce lacus augue, dapibus sed nulla a, auctor sodales dui. Nam euismod   ipsum scelerisque mi cursus, et cursus velit bibendum. </p>
+  <p> Donec fringilla tempus erat, quis efficitur turpis fermentum non. Etiam   egestas fermentum lorem. Quisque ac velit eu ex ornare cursus. Sed   venenatis id sem ut pretium. Etiam ultricies non nisi nec tempor.   Aliquam dapibus felis id quam congue fringilla. Nulla facilisi. Integer   sagittis suscipit orci, et tristique metus. </p>
+  
+
+	<!-- Relative: INICI -->
+
+    <div id="relative">
+    
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut purus nisi,   dictum a consequat in, accumsan vitae tellus. Maecenas eleifend, ipsum   lacinia mollis molestie, lorem turpis volutpat mi, sed gravida magna   neque sit amet velit. Pellentesque placerat hendrerit magna, id sagittis   nulla consectetur sed. Curabitur interdum est erat, sit amet varius   sapien fermentum quis. Ut eros tellus, tristique eu suscipit vitae,   tempus vitae sem. Quisque mattis magna in vestibulum porta. Aenean   semper massa sit amet magna fermentum, eget egestas nunc molestie. Class   aptent taciti sociosqu ad litora torquent per conubia nostra, per   inceptos himenaeos. Aliquam vulputate mollis mollis. Vivamus fermentum   purus et nisi porta varius. Pellentesque molestie faucibus sem. Donec   aliquam ultricies mauris, interdum eleifend sapien porttitor a. Fusce ut   auctor ligula. Praesent nec augue mauris. Curabitur eu purus in ipsum   feugiat accumsan vitae sit amet dolor. </p>
+        <p> Vivamus viverra lorem eu lacinia sodales. Nam a ante vitae purus posuere   ullamcorper. In pharetra convallis viverra. Duis ac velit at nibh   aliquam mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.   Fusce lacus augue, dapibus sed nulla a, auctor sodales dui. Nam euismod   ipsum scelerisque mi cursus, et cursus velit bibendum. </p>
+        <p> Donec fringilla tempus erat, quis efficitur turpis fermentum non. Etiam   egestas fermentum lorem. Quisque ac velit eu ex ornare cursus. Sed   venenatis id sem ut pretium. Etiam ultricies non nisi nec tempor.   Aliquam dapibus felis id quam congue fringilla. Nulla facilisi. Integer   sagittis suscipit orci, et tristique metus. </p>
+  
+    	<div class="static">Relative [Static]</div>
+        
+        <p> Nam suscipit, purus elementum dictum tincidunt, odio mi eleifend est, id   tempor sem sem ac nunc. Aenean sagittis non tortor sit amet dignissim.   Praesent vitae turpis eu nulla tempor molestie vitae aliquam diam.   Maecenas porta nec nunc faucibus porttitor. Vestibulum varius ipsum   felis, eu dignissim mauris bibendum in. Vestibulum ante ipsum primis in   faucibus orci luctus et ultrices posuere cubilia curae; Mauris posuere,   purus et elementum accumsan, neque lacus ullamcorper sapien, ut tempus   quam nisl id lorem. Vivamus nec consectetur ipsum, id feugiat felis. </p>
+        <p> Nam non pretium justo, convallis suscipit leo. Praesent in molestie   justo. Sed vitae convallis elit. Praesent consequat ornare rutrum.   Aliquam at maximus ipsum. Proin suscipit nisl vitae quam laoreet rutrum.   Vestibulum ante ipsum primis in faucibus orci luctus et ultrices   posuere cubilia curae; In tristique euismod pulvinar. Vestibulum   faucibus facilisis sem, nec pellentesque lorem accumsan eu. Praesent   molestie, tortor nec egestas pharetra, sem massa lobortis purus, in   volutpat erat nisi vitae mauris. Phasellus ac luctus justo, nec laoreet   velit. Sed vitae tortor faucibus sapien condimentum mattis eu in odio.   Aenean eleifend dolor diam, in scelerisque ligula vehicula sed. Donec   sapien lectus, consectetur a justo quis, blandit dignissim risus. Sed in   facilisis purus. </p>
+        <p> Integer fermentum dapibus enim, at aliquam mauris tempor vel. Vestibulum   gravida accumsan est, id ornare sapien pharetra nec. Suspendisse   convallis ligula sit amet nisi venenatis tempor. Duis laoreet pulvinar   magna, non pulvinar nulla efficitur auctor. Interdum et malesuada fames   ac ante ipsum primis in faucibus. Nullam sapien sapien, feugiat a varius   in, tincidunt at mauris. In sit amet feugiat nisi, in tincidunt metus.   Vestibulum non mauris vestibulum, ultrices nisi eu, vestibulum dui.   Aenean quis lacinia arcu. Aenean eget mollis nibh, faucibus rutrum quam. </p>
+        
+        <div class="relative">Relative [Relative]</div>
+        
+        <p> Maecenas iaculis, quam efficitur ornare laoreet, erat dui pulvinar   augue, non fringilla magna risus eget odio. Aenean quis dui dignissim   tellus sagittis vulputate nec vitae libero. Pellentesque ultricies justo   non lorem tincidunt, ut porta velit laoreet. Vestibulum tincidunt lorem   non justo faucibus, et semper risus maximus. Aliquam elementum laoreet   ante eu auctor. Proin magna nisl, vestibulum nec porttitor vitae, ornare   at lacus. Sed ultricies fringilla purus at tincidunt. Pellentesque   convallis, ipsum sit amet scelerisque lobortis, augue felis sollicitudin   neque, non accumsan massa metus vitae sapien. In lorem metus, finibus a   interdum nec, bibendum nec urna. Donec elementum sem quis tempus   posuere. Aliquam scelerisque nibh orci, et laoreet elit maximus eu.   Praesent aliquam nisl at interdum tincidunt. Donec rutrum blandit   suscipit. </p>
+          <p> Aliquam sed rutrum magna. Vivamus maximus arcu augue, varius placerat   metus aliquet ut. Suspendisse potenti. Ut tincidunt erat ex, a cursus   magna varius sit amet. Fusce sed nunc ac libero porta placerat. Proin ac   nisl metus. Donec iaculis pellentesque mi ut laoreet. Mauris interdum   vulputate elementum. Integer id velit ut lorem elementum tristique.   Suspendisse non felis sit amet est facilisis dignissim in nec nulla. </p>
+          <p> Etiam pulvinar massa ac posuere vestibulum. Praesent bibendum metus in   enim venenatis lobortis eu non nulla. Fusce convallis porttitor lorem et   imperdiet. Proin fermentum, velit eu tristique mollis, magna nisl   feugiat felis, quis imperdiet nisi arcu ac est. Lorem ipsum dolor sit   amet, consectetur adipiscing elit. Nam dictum pulvinar luctus. Etiam   lobortis molestie dolor, vel mollis ligula porttitor id. Praesent   imperdiet erat vitae orci suscipit semper. Nam ullamcorper nulla lorem.   Sed ac laoreet elit. Ut lacinia tellus eu dolor posuere, sit amet   faucibus massa lacinia. </p>
+        
+        <div class="sticky">Relative [Sticky]</div>
+          
+          <p> Suspendisse ac imperdiet risus. Nullam dictum magna et felis tempor, nec   laoreet magna egestas. Phasellus eget sem sit amet dui fringilla   molestie. Integer varius nisl eget enim sagittis, vitae ullamcorper   tellus aliquam. Maecenas nec ultricies nulla. Proin lectus felis,   rhoncus ut ligula vel, pharetra mollis ex. Cras eget fermentum eros.   Morbi rutrum neque ac maximus ultricies. Donec ut felis laoreet, mollis   ipsum ut, tempus mi. </p>
+          <p> Ut imperdiet neque lacus, et imperdiet neque consectetur sit amet.   Nullam eget felis quis libero venenatis efficitur. In at urna lacus.   Donec tellus ipsum, pharetra vitae velit in, euismod feugiat nibh. Orci   varius natoque penatibus et magnis dis parturient montes, nascetur   ridiculus mus. Nam eu sapien aliquet, feugiat odio quis, consectetur   tortor. Curabitur ac aliquam justo, ut faucibus leo. Vivamus fermentum   turpis rutrum magna volutpat aliquam. In vehicula magna in sagittis   gravida. Phasellus eu nisi viverra, maximus erat sed, tempor risus.   Mauris quis mauris tincidunt, laoreet mauris et, blandit orci. Cras   euismod risus aliquet consequat dignissim. Sed cursus enim eget pharetra   viverra. Aliquam consectetur justo ut volutpat semper. Class aptent   taciti sociosqu ad litora torquent per conubia nostra, per inceptos   himenaeos. Duis faucibus volutpat fringilla. </p>
+          <p> Nam vitae egestas justo. Nunc elit urna, auctor in efficitur ac, auctor   vitae libero. Vivamus nec lectus hendrerit, interdum lectus quis,   fermentum nisl. Cras dictum justo efficitur ultricies vehicula. Donec   vestibulum, orci sit amet condimentum vestibulum, magna sem finibus   odio, eget efficitur augue dolor et justo. Nam ac mauris ut sapien   faucibus vulputate. Etiam finibus, libero vel semper pretium, dolor   velit facilisis sem, et gravida ex erat quis diam. Quisque eleifend   venenatis elit, vitae mollis est sollicitudin in. Suspendisse rutrum   dapibus molestie. Donec ut mattis odio. Proin mauris quam, posuere in   ante in, finibus blandit massa. Fusce sit amet felis at lorem imperdiet   imperdiet vel at sem. </p>
+ 
+        
+        <div class="absolute">Relative [Absolute]</div>
+        
+        <p> Praesent eget tellus ultrices, ultrices nisl eget, tempus risus. Nulla   sem mi, eleifend non felis at, sagittis condimentum ex. Vestibulum in   sapien est. Donec vel justo tristique, euismod sapien vitae, sodales   mauris. Proin leo neque, fringilla eget convallis id, tempus nec ante.   Etiam auctor dolor nibh, in ultrices odio elementum id. Vestibulum ante   ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; </p>
+          <p> Integer non felis laoreet, luctus nunc at, varius magna. Etiam a lorem   augue. Sed turpis ipsum, commodo id blandit nec, cursus non orci. Cras   sit amet mi id urna fermentum convallis non nec mi. Ut sodales hendrerit   sollicitudin. Praesent molestie lacus nisi, non efficitur metus cursus   ut. Cras mollis magna eu tellus bibendum, lobortis aliquet eros laoreet.   Cras faucibus sem nec enim porttitor, ut dignissim orci imperdiet.   Quisque ut sem et neque dictum egestas quis sit amet sem. </p>
+          <p> Pellentesque a varius lorem. Duis ipsum lorem, tempus vel finibus ut,   posuere ut leo. Proin pulvinar nunc vel enim molestie, quis lobortis   nunc tempus. Mauris eu urna molestie, tristique nunc eu, ornare dolor.   Donec pretium imperdiet ipsum at placerat. Sed ac ullamcorper nunc.   Donec ultrices leo ac libero condimentum, ut dictum urna viverra. Donec   dapibus orci velit, nec interdum elit viverra eu. Aenean interdum nunc   volutpat sollicitudin placerat. Curabitur accumsan mi eget nisi   imperdiet, id consequat diam consequat. </p>
+         
+    	<div class="fixed">Relative [Fixed]</div>
+        
+        <p> Suspendisse vitae neque rutrum, dictum dolor vel, aliquam mi. Ut eu arcu   dapibus, pulvinar sapien ac, pellentesque risus. Mauris a semper erat.   Nulla mi ante, congue in eleifend tincidunt, commodo tristique augue.   Sed vitae eros nec enim venenatis aliquet. Aliquam a dictum diam. Orci   varius natoque penatibus et magnis dis parturient montes, nascetur   ridiculus mus. Quisque efficitur quam ut est dictum, eu dictum enim   maximus. </p>
+        <p> Donec luctus vitae purus nec venenatis. Cras rutrum lectus massa, vel   congue tortor vestibulum in. Nulla varius ipsum facilisis, lobortis nisi   sed, blandit purus. Integer in nunc eleifend, vulputate est auctor,   laoreet magna. Suspendisse potenti. Aliquam erat volutpat. Mauris   euismod tincidunt quam, ullamcorper ultrices dolor tempor in.   Pellentesque habitant morbi tristique senectus et netus et malesuada   fames ac turpis egestas. Nunc egestas velit mi, in pulvinar augue tempor   id. </p>
+        <p> Nullam pretium cursus sapien, sagittis malesuada metus consectetur id.   Nullam elementum dui vitae libero commodo finibus. Nulla consectetur,   nibh at maximus fermentum, dui justo volutpat est, nec tristique mi nisi   vel quam. Pellentesque porttitor libero eu congue malesuada. Sed libero   lectus, iaculis eu gravida in, consectetur vel ipsum. Aliquam erat   volutpat. Sed bibendum quis risus ut molestie. Interdum et malesuada   fames ac ante ipsum primis in faucibus. Nunc dapibus sollicitudin nibh,   eu vulputate dolor faucibus in. Suspendisse vulputate, nisi vitae tempor   consectetur, purus nisi aliquam turpis, accumsan interdum metus dui a   erat. Sed eget rutrum urna. </p>
+
+        
+    </div>
+
+
+	<!-- Relative: FINAL -->
+
+
+  
+  <p> Nam suscipit, purus elementum dictum tincidunt, odio mi eleifend est, id   tempor sem sem ac nunc. Aenean sagittis non tortor sit amet dignissim.   Praesent vitae turpis eu nulla tempor molestie vitae aliquam diam.   Maecenas porta nec nunc faucibus porttitor. Vestibulum varius ipsum   felis, eu dignissim mauris bibendum in. Vestibulum ante ipsum primis in   faucibus orci luctus et ultrices posuere cubilia curae; Mauris posuere,   purus et elementum accumsan, neque lacus ullamcorper sapien, ut tempus   quam nisl id lorem. Vivamus nec consectetur ipsum, id feugiat felis. </p>
+  <p> Nam non pretium justo, convallis suscipit leo. Praesent in molestie   justo. Sed vitae convallis elit. Praesent consequat ornare rutrum.   Aliquam at maximus ipsum. Proin suscipit nisl vitae quam laoreet rutrum.   Vestibulum ante ipsum primis in faucibus orci luctus et ultrices   posuere cubilia curae; In tristique euismod pulvinar. Vestibulum   faucibus facilisis sem, nec pellentesque lorem accumsan eu. Praesent   molestie, tortor nec egestas pharetra, sem massa lobortis purus, in   volutpat erat nisi vitae mauris. Phasellus ac luctus justo, nec laoreet   velit. Sed vitae tortor faucibus sapien condimentum mattis eu in odio.   Aenean eleifend dolor diam, in scelerisque ligula vehicula sed. Donec   sapien lectus, consectetur a justo quis, blandit dignissim risus. Sed in   facilisis purus. </p>
+  <p> Integer fermentum dapibus enim, at aliquam mauris tempor vel. Vestibulum   gravida accumsan est, id ornare sapien pharetra nec. Suspendisse   convallis ligula sit amet nisi venenatis tempor. Duis laoreet pulvinar   magna, non pulvinar nulla efficitur auctor. Interdum et malesuada fames   ac ante ipsum primis in faucibus. Nullam sapien sapien, feugiat a varius   in, tincidunt at mauris. In sit amet feugiat nisi, in tincidunt metus.   Vestibulum non mauris vestibulum, ultrices nisi eu, vestibulum dui.   Aenean quis lacinia arcu. Aenean eget mollis nibh, faucibus rutrum quam. </p>
+
+
+</body>
+</html>

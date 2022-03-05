@@ -1,0 +1,255 @@
+<!doctype html>
+	<html lang="ca">
+		<head>
+			<meta charset="utf-8">
+			<title>Repas Formularis</title>
+			<link href="formularisRepas.css" rel="stylesheet" type="text/css">
+		</head>
+
+		<body>
+			<main>
+				<h1>Biblioteca Formulari</h1>
+				<!--Inici del formulari, 
+				l'atribut action indica a on s'enviarà l'informació, 
+				method, per quin mètode s'enviarà( en aquest cas Post, no es veuen les daes a la url), 
+				enctype, indica el mètode de codificació i
+				target que, en aquest cas, s'obrirà a la mateixa finestra. -->
+				<form action="http://host.cat/xal/ifcd0110/" method="post" enctype="application/x-www-form-urlencoded" target="_parent">
+					
+					<fieldset>
+						
+						<legend>Botons</legend>
+						<!--Input de tipus imatge, al clicar a la imatge s'envien les coordenades d'on hem fet click, l'atribut name es el nom de l'element, src indica la ruta de la imatge i l'atribut alt es el text alternatiu que apareixerà en cas de no poder carregar l'imatge -->
+						<label for="imatge">Fes click a la imatge per enviar el formulari:</label><br/>
+							<input type="image" name="imatge" src="Imatges/icono-ubicacion.png" alt="Icona ubicació"><br/><br/>
+						<!--Input de tipus reset, crea un botó que esborra els camps del formulari, 
+						l'atribut value indica el text que apareix al botó -->
+						<input type="reset" value="Esborrar camps">				
+						<!--Input de tipus submit, crea un botó que envia el formulari a on hem especificat a l'atribut action a l'obertura de l'etiqueta form, 
+						l'atribut value indica el text que apareix al botó-->
+						<input type="submit" value="Inscriurem">
+						<!--Input de tipus botó, crea un botó (Generalment es vincula, amb l'atribut onclick, a un script). 
+						L'atribut value indica el text que apareix al botó -->
+						<input type="button" onClick="misatge('Enhorabona has polsat el botó!!!')" value="Botó">
+							<script>
+							  function misatge(text) {
+								alert(text);
+							  }
+							</script>
+					</fieldset>
+					
+					<fieldset>
+						<legend>Camps De Data i Hora</legend>
+						
+						<!--Input de tipus temps, 
+						l'atribut name es el nom de l'element, 
+						value es el valor predeterminat per aquest camp, en aquest cas 08:00, 
+						i l'atribut readonly fa que l'element sigui nomès de lectura, es pot veure i pot rebre el "focus", pero no es pot modificar -->
+						
+						<label for="hora">Hora :</label>
+							<input type="time" name="hora" value="08:00" readonly>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						
+						<!--Input de tipus mes, les dades s'envien en format de "mes -- Any", 
+						l'atribut name es el nom de l'element i 
+						title fa sortir una finestra modal emb el text d'ajuda que li hem introduït [NOTA, FIREFOX NO TE CONTROLS ESPECÍFICS PER A AQUEST ELEMENT I POT RESULTAR CONFÚS, CHROME I EDGE SÍ QUE EN TENEN] -->
+						
+						<label for="mes">Selecciona un mes (Exemple Gener -- 2019) :</label>
+							<input type="month" name="mes" title="Selecciona un mes. Exemple [gener -- 2021]">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						
+						<!--Input de tipus setmana, week, les dades s'envien en format de "nº setmana, Any", 
+						l'atribut name es el nom de l'element 
+						i title fa sortir una finestra modal emb el text d'ajuda que li hem introduït [NOTA, FIREFOX NO TE CONTROLS ESPECÍFICS PER A AQUEST ELEMENT I POT RESULTAR CONFÚS, CHROME I EDGE SÍ QUE EN TENEN]-->
+						
+						<label for="setmana">Selecciona una setmana (Exemple 20, 2019) :</label>
+							<input type="week" name="setmana" title="Selecciona una setmana. Exemple [20, 2021]"><br/><br/>
+						
+						<!--Input de tipus data i hora, datetime-local, les dades s'envien en format de "dd/mm/aaaa hh:mm", 
+						l'atribut name es el nom de l'element i 
+						title fa sortir una finestra modal emb el text d'ajuda que li hem introduït [NOTA, FIREFOX NO TE CONTROLS ESPECÍFICS PER A AQUEST ELEMENT I POT RESULTAR CONFÚS, CHROME I EDGE SÍ QUE EN TENEN] -->
+						<label for="dataHora">Introdueix la data i l'hora (Exemple 01/01/2020 06:00) :</label>
+							<input type="datetime-local" name="dataHora" title="Selecciona data i hora. Exemple [Exemple 01/01/2020 06:00]"><br/><br/>
+						
+						<!--Input de tipus data, l'atribut id es l'identificador únic, 
+						name es el nom de l'element, 
+						title fa sortir una finestra modal emb el text d'ajuda que li hem introduït, 
+						max indica la datà màxima que podrem introduïr -->
+						<label for="DataNaixement">* Data naixement :</label>
+							<input type="date" id="DataNaixement" name="DataNaixement" title="Selecciona la teva data de naixement" max="2005-01-01" required>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</fieldset>
+                    
+                    <!--ABDESITO PA !-->
+                    
+                    <!-- L'element fieldset (grup de camps) permet organitzar en grups els camps d'un formulari. -->
+					<fieldset>
+                    	<!-- L'element (llegenda) crea un títol per a un grup (els camps) d'un formulari. -->
+						<legend>Camps de Text i Números</legend>
+
+						<!--Input de tipus text, amb l'atribut nom indiquem el nom de l'input, per vinvular-lo a l'etiqueta label, l'atribut title fa sortir una finestra modal emb el text d'ajuda que li hem introduït, amb size, indiquem la longitud del "rectangle" a on introduïrem el text, amb maxlenght la longitud màxima de caràcters que pot contenir, amb el placeholder fem que aparegui una ajuda dintre el camp en forma de text i amb autofocus fem que el cursor es trobi en aquest camp al carregar la pàgina-->
+						<label for="nom">Nom: </label><br/>
+						<input type="tex" name="nom" title="Escriu el teu nom" size="40" maxlength="60" placeholder="Escriu el teu nom" autofocus autocomplete="on">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+						<!-- Input de tipus password, amb l'atribut nom indiquem el nom de l'input, per vinvular-lo a l'etiqueta label, l'atribut title fa sortir una finestra modal emb el text d'ajuda que li hem introduït, amb size, indiquem la longitud del "rectangle" a on introduïrem el text i amb maxlenght la longitud màxima de caràcters que pot contenir-->
+						<label for="pwd">Contrasenya: </label>
+						<input type="password" name="pwd" title="Escriu la teva contrasenya, màxim 10 caràcters" size="20" maxlength="10">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+						<!--Input de tipus telèfon amb l'atribut nom indiquem el nom de l'input, per vinvular-lo a l'etiqueta label, l'atribut title fa sortir una finestra modal emb el text d'ajuda que li hem introduït, amb size, indiquem la longitud del "rectangle" a on introduïrem el text, amb maxlenght la longitud màxima de caràcters que pot contenir, amb el placeholder fem que aparegui una ajuda dintre el camp en forma de text i amb pattern li indiquem el format amb el que s'han d'introduïr les dades (en aquest cas un simbol + al principi seguit de 2 digits del 0 al 9, seguit de tres blocs de tres digits del 0 al 9-->
+						<label for="telefon">Telèfon: </label>
+						<input type="tel" name="telefon" title="Escriu el teu teléfon" size="12" maxlength="12" placeholder="+00123123123" pattern="[+]{1}[0-9]{2}[0-9]{3}[0-9]{3}[0-9]{3}" autocomplete="on">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+						<!-- Input de tipus email amb l'atribut nom indiquem el nom de l'input, per vinvular-lo a l'etiqueta label, l'atribut title fa sortir una finestra modal emb el text d'ajuda que li hem introduït i amb el placeholder fem que aparegui una ajuda dintre el camp en forma de text-->
+						<label for="mail">Correu electronic: </label>
+						<input type="email" name="mail" title="Escriu el teu correu electrònic" placeholder="nom@domini.ext" autocomplete="on">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+						<!--Input de tipus número, l'atribut id es l'identificador únic, name es el nom de l'element, amb placeholder fem que aparegui una ajuda dintre el camp en forma de text, size indica el tamany del rectangle a on introduïrem les dades, maxlenght especifíca el tamany màxim de l'input, min indica el valor mínim que es pot introduïr al camp, max estableix el valor mínim que podrem introduïr al camp, step estableix la quantitat, sencera o decimal, en la que augmenta o disminueix el valor, en aquest cas any (per poder escriure cualsevol número) i title fa sortir una finestra modal emb el text d'ajuda que li hem introduït-->
+						<label for="Edat">Edat :</label>
+						<input type="number" id="edat" name="edat" size="3" maxlenght="3" min="16" max="100" step="any" title="Escriu la teva edat">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<br/><br/>
+                        
+						<!--Input de tipus text area, "caixa" de text, l'atribut id es l'identificador únic de cada element, name es el nom de l'atribut, rows indica el número de files inicials de la caixa, cols indica el número de columnes i amb el placeholder fem que aparegui una ajuda dintre el camp en forma de text-->
+						<label for="comentaris">Deixa aquí els teus comentaris :</label><br/>
+						<textarea id="comentaris" name="comentaris" rows="4" cols="50" placeholder="Comentaris"></textarea><br><br>
+
+					</fieldset><br/>
+                    
+                    
+                  
+                     <fieldset>
+      <legend> selectores</legend>
+      <!-- Input de tipus radio, casella de selecció, l'atribut id es l'identificador únic de cada input, name es el nom de cada element, en aquest cas he posat el mateix a tots per que només es pugui seleccionar un, value es el valor per defecte de l'element-->
+      <p>Selecciona el teu gènere
+        <input type="radio" id="home" name="genere" value="Home">
+        <label for="home">Home</label>
+        <input type="radio" id="dona" name="genere" value="Dona">
+        <label for="dona">Dona</label>
+        <input type="radio" id="altres" name="genere" value="Altres">
+        <label for="alrtes">Altres</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <!--Input de tipus select, menú de selecció, l'atribut name es el nom del camp, title fa sortir una finestra modal emb el text d'ajuda que li hem introduït i l'atribut required indica que el camp obligatori-->
+      <label for="curs">* Selecciona un curs :</label>
+      <select id="curs" name="curs" title="Seleciona el curs" required="">
+        <option value=""></option>
+        <option value="ConfeccioIPublicacioDePaginesWeb">Confecció i publicació de pàgines web</option>
+        <option value="AnglesB1">Anglès B1</option>
+        <option value="AtencioSociosanitariaAPersonesAlDomicili">Atenció sociosanitària a persones al domicili</option>
+        <option value="ActivitatsAuxiliarsDeMagatzem">Activitats auxiliars de magatzem</option>
+        <option value="OperacionsBasiquesDeRestaurantIBar">Operacions bàsiques de restaurant i bar</option>
+      </select><br>
+      <br>
+      
+      <!--Input de tipus color, permet triar un color mitjançant un selecor de color, l'atribut name es el nom de l'element i value defineix el valor per defecte del camp, en aquest cas vermell -->
+						<label for="colorTriat">Tria un color :</label>
+							<input type="color" name="colorTriat" value="#ff0000"><br/><br/>
+      
+      <!-- Input de tipus search, cerca, l'atribut nom es el nom de l'element i list es el nom de l'id de la  llista <datalist> on hi han les sugerencies per la cerca-->
+      <label for="buscaModel"> Buscar model :</label>
+      <input type="search" name="buscaModels" list="llistamodels">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <!-- Input de tipus checkbox,casella de selecció, l'atribut id es l'identificador únic de cada input, name es el nom de cada element, value es el valor per defecte de l'element i checked indica que aquest checkbox estarà seleccionat per defecte-->
+      <p>Selecciona el teu tipus de vehicle :
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Moto" checked="">
+        <label for="vehicle1"> Tinc Moto</label>
+        <input type="checkbox" id="vehicle2" name="vehicle2" value="Cotxe">
+        <label for="vehicle2"> Tinc cotxe</label>
+      </p>
+      
+      <!--Input de tipus rang, l'atribut name es el nom de l'element, min indica al rang mínim, max el rang màxim i step indica en quina quantitat augmenta cada pas del control deslliçant-->
+						<label for="nivell">Indica el teu nivell (Bàsic-Mig-Alt) :</label>
+							<p>Bàsic<input type="range" name="nivell" min="1" max="3" step="1">Alt<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mig</p>
+      
+    </fieldset>
+                 
+                 
+                 
+                    
+    <!--PAU!-->                
+    <fieldset>
+      <legend>
+        Pujar arxius
+      </legend>
+      <!--Input de tipus file, arxiu, permet seleccionar un arxiu, l'atribut name indica el nom de l'element-->
+      <label for="arxiu">Adjuntar arxiu :</label>
+      <input type="file" name="arxiu" title="Click al botó per buscar l'arxiu">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <!--Input de tipus temps, l'atribut name es el nom de l'element, value es el valor predeterminat per aquest camp, en aquest cas 08:00, i l'atribut readonly fa que l'element sigui nomès de lectura, es pot veure i pot rebre el "focus", pero no es pot modificar -->
+      <!--input de tipus File, arxiu, permet seleccionar imatge-->
+      Puja el teu avatar:<input type="file" name="archivo" value="image/*"><br><br>
+    </fieldset>
+                    
+				</form>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+				<!--llista d'opcions sugerides per al input de tipus search, s'enllacen mitjançant l'atribut list de l'imput i la id de la llista-->
+				<datalist id="llistamodels">
+					<option value="Camaro">Camaro</option>
+					<option value="Corvette">Corvette</option>
+					<option value="Impala">Impala</option>
+					<option value="Colorado">Colorado</option>
+				</datalist>
+				
+			</main>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+			<!--register form amb css-->		
+			<form action="/action_page.php" style="max-width:500px;margin:auto">
+				<h2>Register Form</h2>
+				<div class="input-container">
+					<i class="fa fa-user icon"></i>
+					<input class="input-field" type="text" placeholder="Username" name="usrnm">
+				</div>
+
+				<div class="input-container">
+					<i class="fa fa-envelope icon"></i>
+					<input class="input-field" type="text" placeholder="Email" name="email">
+				</div>
+  
+				<div class="input-container">
+					<i class="fa fa-key icon"></i>
+					<input class="input-field" type="password" placeholder="Password" name="psw">
+				</div>
+
+				<button type="submit" class="btn">Register</button>
+			</form>
+	
+		</body>
+	</html>

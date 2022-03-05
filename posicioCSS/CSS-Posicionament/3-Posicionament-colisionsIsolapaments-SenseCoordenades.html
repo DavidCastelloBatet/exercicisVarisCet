@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS Position: Colisions i Solapaments (Sense coordenades)</title>
+<style type="text/css">
+
+	h1, h2, h3, h4, h5{
+	text-align:center;
+	}
+	
+	.absolute {
+		position:absolute;
+		width:250px;
+		height:50px;	
+		background-color:#FF0000;
+	}
+		
+	
+	.fixed{
+		position:Fixed;
+		width:250px;
+		height:50px;
+		background-color:#00FFFF;
+	}
+	
+	
+	.relative{
+		position:Relative;
+		width:250px;
+		height:50px;
+		background-color:#00FF00;
+	}
+
+	
+	.static {
+		position:Static;
+		width:250px;
+		height:50px;
+		background-color:#FFFF00;
+	}
+		
+		
+	.sticky{
+		position:Sticky;
+		width:250px;
+		height:50px;
+		background-color:#0000FF;
+	}
+
+
+
+</style>
+</head>
+
+<body>
+
+	<h1>CSS Position: Colisions i solapaments</h1>
+ 
+ 	<h2>Sense coordenades</h2> 
+    
+
+	<h3>Static</h3> 
+	
+	<h4>Static vs Static</h4>
+    <h5>Empat (Colisió) | Ordre determinat pel flux</h5>  
+    <div class="static">Static (vs Static)</div>
+	<div class="static">(Static vs) Static</div>
+
+    <h4>Static vs Absolute</h4>
+    <h5>Empat (Colisió) | Absolut es desacopla sense reservar espai</h5>  
+	<div class="static">Static (vs Absolute)</div>
+    <div class="absolute">(Static vs) Absolute</div>
+
+	<h4>Static vs Relative</h4>
+    <h5>Empat (Colisió) | Ordre determinat pel flux</h5>
+    <div class="static">Static (vs Relative)</div>
+    <div class="relative">(Static vs) Relative</div>    
+
+	<h4>Static vs Fixed</h4>
+    <h5>No procedeix per que el fixed necessita coordenades</h5>
+    <div class="static">Static (vs Fixed)</div> 
+	<div class="fixed">(Fixed vs) Relative</div>
+     
+ 	<h4>Static vs Sticky</h4>
+    <h5>Empat (Colisió) | Ordre determinat pel flux</h5>
+    <div class="static">Static (vs Sticky)</div> 
+	<div class="sticky">(Sticky vs) Relative</div>
+    
+    
+ 
+	<h3>Absolute</h3> 
+ 
+ 	<h4>Absolute vs Static</h4>
+    <h5>Guanya Absolute (Superposició)</h5> 
+    <div class="absolute">Absolute (vs Static)</div>
+	<div class="static">(Absolute vs) Static</div>
+
+    <h4>Absolute vs Absolute</h4>
+    <h5>Guanya el segon absolute (Superposició) | Ordre determinat pel flux</h5>
+	<div class="absolute">Absolute (vs Absolute)</div>
+    <div class="absolute">(Absolute vs) Absolute</div>
+
+	<h4>Absolute vs Relative</h4>
+    <h5>Guanya el segon (Superposició) | Ordre determinat pel flux</h5>
+    <div class="absolute">Absolute (vs Relative)</div>
+    <div class="relative">(Absolute vs) Relative</div>    
+
+	<h4>Absolute vs Fixed</h4>
+    <h5>No procedeix per que el fixed necessita coordenades</h5>
+    <div class="absolute">Absolute (vs Fixed)</div> 
+	<div class="fixed">(Fixed vs) Relative</div>
+     
+ 	<h4>Absolute vs Sticky</h4>
+    <h5>Guanya el segon (Superposició) | Ordre determinat pel flux</h5>
+    <div class="absolute">Absolute (vs Sticky)</div> 
+	<div class="sticky">(Absolute vs) Sticky</div>
+  
+
+
+	<h3>Relative</h3> 
+ 
+ 	<h4>Relative vs Static</h4>
+    <h5>Empat (Colisió) | Ordre determinat pel flux</h5>
+    <div class="relative">Relative (vs Static)</div>
+	<div class="static">(Relative vs) Static</div>
+
+    <h4>Relative vs Absolute</h4>
+    <h5>Empat (Colisió) | Ordre determinat pel flux. L'absolut es desacopla.</h5>
+	<div class="relative">Relative vs (Absolute)</div>
+    <div class="absolute">(Relative vs) Absolute</div>
+
+	<h4>Relative vs Relative</h4>
+    <h5>Empat (Colisió) | Ordre determinat pel flux</h5>
+    <div class="relative">Relative (vs Relative)</div>
+    <div class="relative">(Relative vs) Relative</div>    
+
+	<h4>Relative vs Fixed</h4>
+    <h5>No procedeix per que el fixed necessita coordenades</h5>
+    <div class="relative">Relative (vs Fixed)</div> 
+	<div class="fixed">(Fixed vs) Relative</div>
+     
+ 	<h4>Relative vs Sticky</h4>
+    <h5>Empat (Colisió) | Ordre determinat pel flux</h5>
+    <div class="relative">Relative (vs Sticky)</div> 
+	<div class="sticky">(Sticky vs) Relative</div>
+
+
+	<h3>Fixed</h3> 
+ 
+ 	<h4>Fixed vs Static</h4>
+    <h5>No procedeix per que el fixed necessita coordenades</h5> 
+    <div class="fixed">Fixed (vs Static)</div>
+	<div class="static">(Fixed vs) Static</div>
+
+    <h4>Fixed vs Absolute</h4>
+    <h5>No procedeix per que el fixed necessita coordenades. L'absolute es desacopla.</h5>
+	<div class="fixed">Fixed vs (Absolute)</div>
+    <div class="absolute">(Fixed vs) Absolute</div>
+
+	<h4>Fixed vs Relative</h4>
+    <h5>No procedeix per que el fixed necessita coordenades</h5>
+    <div class="fixed">Fixed (vs Relative)</div>
+    <div class="relative">(Fixed vs) Relative</div>    
+
+	<h4>Fixed vs Fixed</h4>
+    <h5>No procedeix per que el fixed necessita coordenades</h5>
+    <div class="fixed">Fixed (vs Fixed)</div> 
+	<div class="fixed">(Fixed vs) Fixed</div>
+     
+ 	<h4>Fixed vs Sticky</h4>
+    <h5>No procedeix per que el fixed necessita coordenades</h5>
+    <div class="fixed">Fixed (vs Sticky)</div> 
+	<div class="sticky">(Fixed vs) Sticky</div>
+
+
+
+	<h3>Sticky</h3> 
+ 
+ 	<h4>Sticky vs Static</h4> 
+    <h5>Empat (Colisió) | Ordre determinat pel flux</h5>
+    <div class="sticky">Sticky (vs Static)</div>
+	<div class="static">(Sticky vs) Static</div>
+
+    <h4>Sticky vs Absolute</h4>
+    <h5>Empat (Colisió) | Ordre determinat pel flux | Absolute es desacopla.</h5>
+	<div class="sticky">Sticky vs (Absolute)</div>
+    <div class="absolute">(Sticky vs) Absolute</div>
+
+	<h4>Sticky vs Relative</h4>
+    <h5>Empat (Colisió) | Ordre determinat pel flux</h5>
+    <div class="sticky">Sticky (vs Relative)</div>
+    <div class="relative">(Sticky vs) Relative</div>    
+
+	<h4>Sticky vs Fixed</h4>
+    <h5>No procedeix per que el fixed necessita coordenades</h5>
+    <div class="sticky">Sticky (vs Fixed)</div> 
+	<div class="fixed">(Sticky vs) Fixed</div>
+     
+ 	<h4>Sticky vs Sticky</h4>
+    <h5>Empat (Colisió) | Ordre determinat pel flux</h5>
+    <div class="sticky">Sticky (vs Sticky)</div> 
+	<div class="sticky">(Sticky vs) Sticky</div>
+	<hr/>
+
+
+</body>
+</html>

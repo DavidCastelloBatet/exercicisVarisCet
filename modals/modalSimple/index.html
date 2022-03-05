@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      body {
+        background-color: cyan;
+      }
+      #demo {
+        background-color: red;
+        height: 400px;
+        margin-bottom: 20px;
+        width: 400px;
+      }
+      button {
+        font-size: 25px;
+        margin-right: 20px;
+      }
+    </style>
+
+    <h2>Mini Modal</h2>
+
+    <div id="demo"></div>
+
+    <button onclick="document.getElementById('demo').style.display='none'">
+      Ocultar
+    </button>
+
+    <button onclick="document.getElementById('demo').style.display='block'">
+      Mostrar
+    </button>
+  </body>
+</html>
