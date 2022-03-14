@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <section>
+    <h2>Queda per la FM 2022:</h2>
+    <p>
+      <span id="days"></span> dies - <span id="hours"></span> hores - <span id="minutes"></span> minuts - <span
+        id="seconds"></span> segons
+    </p>
+  </section>
+  <!--
+        <script src="index.js"></script>
+    -->
+  <script>
+    //Quan es carrega el DOM dispares la funció
+    document.addEventListener('DOMContentLoaded', () => {
+
+      //===
+      // VARIABLES
+      //===
+      // Data Objectiu
+      const FESTA_MAJOR = new Date('8/28/2022 12:00 AM');
+
+      // DOM for render
+      let SPAN_DAYS = document.querySelector('span#days');
+      let SPAN_HOURS = document.querySelector('span#hours');
+      let SPAN_MINUTES = document.querySelector('span#minutes');
+      let SPAN_SECONDS = document.querySelector('span#seconds');
+
+      // Pasem a milisegons per fer els càlculs
+      let MILLISECONDS_OF_A_MINUTE = 1000 * 60;
+      let MILLISECONDS_OF_A_HOUR = MILLISECONDS_OF_A_MINUTE * 60;
+      let MILLISECONDS_OF_A_DAY = MILLISECONDS_OF_A_HOUR * 24
+
+      //===
+      // FUNCIONS
+      //===
+
+      /**
+      * Method that updates the countdown and the sample
+      */
+      function updateCountdown() {
+        // Calculs
+        let NOW = new Date()
+        let DURATION = FESTA_MAJOR - NOW;
+        let REMAINING_DAYS = Math.floor(DURATION / MILLISECONDS_OF_A_DAY);
+        let REMAINING_HOURS = Math.floor((DURATION % MILLISECONDS_OF_A_DAY) / MILLISECONDS_OF_A_HOUR);
+        let REMAINING_MINUTES = Math.floor((DURATION % MILLISECONDS_OF_A_HOUR) / MILLISECONDS_OF_A_MINUTE);
+        let REMAINING_SECONDS = Math.floor((DURATION % MILLISECONDS_OF_A_MINUTE) / 1000);
+
+        // Render
+        SPAN_DAYS.textContent = REMAINING_DAYS;
+        SPAN_HOURS.textContent = REMAINING_HOURS;
+        SPAN_MINUTES.textContent = REMAINING_MINUTES;
+        SPAN_SECONDS.textContent = REMAINING_SECONDS;
+      }
+
+      //===
+      // Disparo la funcio
+      //===
+      updateCountdown();
+
+      // Refresco cada segon. Paso com a parametres la referencia a updateContdown 
+      // i el temps d'actualitzacio 1 segon = 1000milisegons
+      setInterval(updateCountdown, 1000);
+    });
+
+  </script>
+</body>
+
+</html>
