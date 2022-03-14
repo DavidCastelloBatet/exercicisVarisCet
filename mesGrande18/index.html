@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Major d'edad</title>
+</head>
+
+<body>
+  <h1>Major d'Edat</h1>
+  <form action="">
+    <label>Fecha nacimiento:</label>
+    <input type='Date' value='' id="dataNaix" required>
+    <input type="button" value="Enviar" onclick="calcularEdat()" />
+  </form>
+  <div id="edat"></div>
+
+  <!--
+        <script src="index.js"></script>
+    -->
+
+  <script>
+    function calcularEdat() {
+
+      let hoy = new Date();
+      console.log(hoy);
+      let aniversari = new Date(document.getElementById('dataNaix').value);
+      console.log(aniversari);
+
+      let edad = hoy.getFullYear() - aniversari.getFullYear();
+      console.log(edad);
+
+      let mes = hoy.getMonth() - aniversari.getMonth();
+      if (mes < 0 || (mes === 0 && hoy.getDate() < aniversari.getDate())) {
+        edad--;
+      }
+      console.log(mes)
+
+      if (edad >= 18) {
+        document.getElementById('edat').innerHTML = 'Ets major d\'edat';
+        console.log("Ets major d'edat ");
+      } else {
+        document.getElementById('edat').innerHTML = 'Ets menor d\'edat';
+        console.log("Ets menor d'edad ");
+      }
+    }
+  </script>
+
+</body>
+
+</html>
